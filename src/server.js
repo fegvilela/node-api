@@ -1,9 +1,9 @@
 const express = require('express');
+const knex = require('./database');
+const routes = require('./routes');
 
 const app = express();
 
-app.get('/', (req, res) => {
-  res.send('Hello RocketSeat');
-});
+app.use(routes);
 
 app.listen(3333, () => console.log('server is running'));
