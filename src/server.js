@@ -6,4 +6,4 @@ app.get('/', (req, res) => {
   res.send('Hello RocketSeat');
 });
 
-app.listen(3001);
+app.listen(3333, () => console.log('server is running'));
