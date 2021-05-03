@@ -8,6 +8,18 @@ module.exports = {
     return res.json(results);
   },
 
+  async show(req, res, next) {
+    const { id } = req.params;
+
+    try {
+      const results = await knex("users").where("id", id);
+
+      return res.json(results);
+    } catch (error) {
+      next(error);
+    }
+  },
+
   async create(req, res, next) {
     try {
       const { username } = req.body;
